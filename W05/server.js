@@ -48,7 +48,8 @@ app.post("/user-register", imgFiles, (req, res) => {
         console.log("File name: " + req.files["profile_img3"][i].filename);
     }
 
-    res.end();
+
+    res.send(`<img src="/photos/${ req.files["profile_img1"][0].filename }"/>`);
 });
 
 app.listen(port);
